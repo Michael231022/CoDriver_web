@@ -630,7 +630,8 @@ button {
   height: 300px;
   margin: 0px auto;
   padding: auto;
-  background-color: #fff;
+  background-color: rgb(243, 250, 255);
+  color: var(--primary-blue);
   border: 1px solid var(--primary-blue);
   border-radius: 25px;
 }
@@ -641,6 +642,19 @@ button {
   transition: all 0.3s ease;
   background-color: var(--primary-blue);
   color: var(--white);
+}
+
+.dashboard-icon {
+    width: 150px;          
+    height: auto;
+    fill: var(--primary-blue);        
+    transition: fill 0.3s ease;
+    margin-bottom: 15px;   
+}
+
+
+.service-card:hover .dashboard-icon {
+    fill: var(--white);        
 }
 
 /* =========================================
