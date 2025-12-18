@@ -452,6 +452,7 @@ button {
    ========================================= */
 .slider-section {
   min-height: 100vh;
+  padding: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -604,7 +605,46 @@ button {
 }
 
 /* =========================================
-   8. 信息展示区 (Information Base)
+   8. 服务板块 (Service Sections)
+   ========================================= */
+.service-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 50px;
+  background-color: #fff;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.service-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  margin: 0px auto;
+  padding: auto;
+  background-color: #fff;
+  border: 1px solid var(--primary-blue);
+  border-radius: 25px;
+}
+
+.service-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+/* =========================================
+   9. 信息展示区 (Information Base)
    ========================================= */
 .information-base-section {
   width: 100%;
