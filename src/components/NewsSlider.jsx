@@ -1,9 +1,9 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import 'swiper/css/pagination';
-import { Navigation, Pagination } from "swiper/modules";
+import 'swiper/css/navigation';
+import { Pagination, Navigation } from 'swiper/modules';
 
 function NewsSlider() {
     const newsData = [
@@ -40,7 +40,7 @@ function NewsSlider() {
         name: "AI Assistant",
         role: "Support",
         image: "/image/background-img/ai.jpeg",
-        desc: "24/7 AI support to assist you with any inquiries regarding our services."
+        desc: "Our AI-driven system ensures that your rides are both safe and reliable."
         },
     ];
 
@@ -49,8 +49,11 @@ function NewsSlider() {
             <div className="slide-container">
                 {/* Title */}
                 <div>
-                <a className="slider-h1-a" href="/news"><h1 className="slider-h1">Newsroom</h1></a>
+                    <a className="slider-h1-a" href="/news"><h1 className="slider-h1">Newsroom</h1></a>
                 </div>
+
+                <div className="swiper-button-prev custom-prev-arrow"></div>
+                <div className="swiper-button-next custom-next-arrow"></div>
 
                 <div className="slide-content">
                 {/* Swiper 组件开始 */}
@@ -65,20 +68,17 @@ function NewsSlider() {
                     clickable: true, // 圆点可以点击
                     dynamicBullets: true, // 圆点大小动态变化
                     }}
-                    navigation={true} // 显示左右箭头
+                    navigation={{
+                        nextEl: '.custom-next-arrow',
+                        prevEl: '.custom-prev-arrow',
+                    }} 
                     modules={[Pagination, Navigation]} // 注册模块
                     className="mySwiper"
                     // 响应式断点：不同屏幕宽度显示不同数量
                     breakpoints={{
-                        0: {
-                            slidesPerView: 1, // 手机只显 1 张
-                        },
-                        520: {
-                            slidesPerView: 2, // 平板显 2 张
-                        },
-                        950: {
-                            slidesPerView: 3, // 电脑显 3 张
-                        },
+                        0: { slidesPerView: 1 },
+                        750: { slidesPerView: 2 },
+                        1200: { slidesPerView: 3 },
                     }}
                 >
                     {/* 这里的魔法是：map 循环。自动把上面的数据变成卡片 */}

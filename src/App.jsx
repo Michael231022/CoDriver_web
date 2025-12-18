@@ -5,6 +5,7 @@ import HeroBanner from './components/HeroBanner';
 import DownloadBar from './components/DownloadBar';
 import IntroSection from './components/IntroSection';
 import NewsSlider from './components/NewsSlider';
+import ServiceDashboard from './components/ServiceDashboard';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
 
       {/* News Slider Section */}
       <NewsSlider />
+
+      {/* Service Dashboard Section */}
+      <ServiceDashboard />
 
       {/* Bottom Footer */}
       <Footer />
