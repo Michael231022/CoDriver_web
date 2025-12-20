@@ -50,15 +50,19 @@ function ServiceDashboard() {
 
     return (
         <div className="service-dashboard">
-            {services.map(({ id, name, icon, description, href }) => (
-                <a href={href} className='service-card' key={id}>
-                    <div className="icon-wrapper">
-                        {icon}
-                    </div>
-                    <h2>{name}</h2>
-                    <p>{description}</p>
-                </a>
-            ))}
+            <h1>CoDriver Services</h1>
+
+            <div className="services-grid">
+                {services.map(({ id, name, icon, description, href }) => (
+                    <a href={href} className='service-card' key={id}>
+                        <div className="icon-wrapper">
+                            {icon}
+                        </div>
+                        <h2>{name}</h2>
+                        <p>{description}</p>
+                    </a>
+                ))}
+            </div>
         </div>
     );
 }
