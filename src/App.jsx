@@ -1,37 +1,25 @@
+// src/App.jsx
 import React from 'react';
-import Navbar  from './components/Navbar';
-import Footer from './components/Footer';
-import HeroBanner from './components/HeroBanner';
-import DownloadBar from './components/DownloadBar';
-import IntroSection from './components/IntroSection';
-import NewsSlider from './components/NewsSlider';
-import ServiceDashboard from './components/ServiceDashboard';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// 引入刚才创建的两个页面
+import Home from './pages/Home';
+import Services from './pages/Services';
 
 function App() {
   return (
-    <div className="main_content">
-      {/* Top NavBar */}
-      <Navbar />
-
-      {/* Hero Banner Section */}
-      <HeroBanner />
-
-      {/* Download Bar Section */}  
-      <DownloadBar />
-
-      {/* Intro Section */}
-      <IntroSection />
-
-      {/* News Slider Section */}
-      <NewsSlider />
-
-      {/* Service Dashboard Section */}
-      <ServiceDashboard />
-
-      {/* Bottom Footer */}
-      <Footer />
-
-    </div>
+    // 1. 包裹整个应用
+    <BrowserRouter>
+      <Routes>
+        {/* 2. 定义路由规则 */}
+        <Route path="/" element={<Home />} />           {/* 首页 */}
+        <Route path="/services" element={<Services />} /> {/* 服务页 */}
+        
+        {/* 你以后还可以加更多页面，比如：
+        <Route path="/about" element={<About />} /> 
+        */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 

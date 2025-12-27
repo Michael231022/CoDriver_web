@@ -1,15 +1,16 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 function Navbar() {
   return (
     <header className="header-bar">
         {/* 1. Logo 部分 */}
-        <a id="header-logo-a" href="/">
+        <Link id="header-logo-a" to="/">
             <nav className="header-logo-nav">
                 {/* 注意：图片路径前面加了 /，代表从 public 文件夹读取 */}
                 <img className="header-logo" draggable="false" src="/image/logo/codriver-logo-dark.png" alt="CoDriver Logo" />
             </nav>
-        </a>
+        </Link>
 
         {/* 2. 登录按钮图标部分 (SVG) */}
         <div className="login-button">
@@ -17,8 +18,8 @@ function Navbar() {
                 <path fill="#000000" d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464l349.5 0c-8.9-63.3-63.3-112-129-112l-91.4 0c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z"/>
             </svg>
             <div className="login-btn-dropdown">
-                <a id="signup_acc_2" href="/signup">Sign Up</a>
-                <a id="login_acc_2" href="/login">Log in</a>
+                <Link id="signup_acc_2" to="/signup">Sign Up</Link>
+                <Link id="login_acc_2" to="/login">Log in</Link>
             </div>
         </div>
 
@@ -32,10 +33,10 @@ function Navbar() {
         {/* 4. 中间导航链接 */}
         <nav className="nav-bar">
             <ul className="nav_links">
-                <a href="/services"><li>Services</li></a>
-                <a href="/drivers"><li>Drivers</li></a>
-                <a href="/news"><li>Newsroom</li></a>
-                <a href="/about"><li>About Us</li></a>
+                <Link to="/services"><li>Services</li></Link>
+                <Link to="/drivers"><li>Drivers</li></Link>
+                <Link to="/news"><li>Newsroom</li></Link>
+                <Link to="/about"><li>About Us</li></Link>
                 <div className="nav_links-more-dropdown-div">
                     <a><li className="nav_links-li">More <span className="arrow-down-span"><i className="nav-bar-arrow-down"></i></span></li></a>
                     <div className="nav_links-more-dropdown">
@@ -52,11 +53,11 @@ function Navbar() {
         {/* 5. 右侧按钮 */}
         <nav className="nav-bar">
             <div className="rightcontent-call-div">
-                <a id="calldriver" href="/book"><button>'Co' For A Driver</button></a>
+                <Link id="calldriver" to="/book"><button>'Co' For A Driver</button></Link>
             </div>
             <div className="rightcontent-login-div">
-                <a id="signup_acc" href="/signup"><button>Sign Up</button></a>
-                <a id="login_acc" href="/login"><button>Log in</button></a>
+                <Link id="signup_acc" to="/signup"><button>Sign Up</button></Link>
+                <Link id="login_acc" to="/login"><button>Log in</button></Link>
             </div>
         </nav>
     </header>
