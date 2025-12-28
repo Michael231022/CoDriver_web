@@ -1,0 +1,282 @@
+/* =========================================
+   1. 全局变量与重置 (Variables & Reset)
+   ========================================= */
+:root {
+  /* 🎨 核心颜色 */
+  --primary-blue: rgb(37, 37, 231);
+  --primary-hover: rgba(37, 37, 231, 0.868);
+  --bg-grey: #eaeff2;
+  --bg-light-grey: rgb(247, 247, 247);
+  --text-dark: #383e43;
+  --text-grey: #707070;
+  --white: #ffffff;
+  
+  /* 📏 尺寸 */
+  --header-height: 90px;
+  
+  /* 🔤 字体 */
+  --font-main: "Montserrat", sans-serif;
+  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-main); /* 统一字体，子元素会自动继承 */
+  color: black;
+  overflow-x: hidden;
+}
+
+/* 禁止图片拖拽 */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* =========================================
+   2. Services Hero-TopBar
+    ========================================= */
+
+.hero-topbar {
+    width: 100%;
+    height: 230px;
+    background: linear-gradient(to left,white 50%, rgba(41, 41, 209, 0.911) 50%);
+    background-size: 200% 100%;
+    background-position:  left bottom; /*rgba(41, 41, 209, 0.911)*/
+    transition: all .3s ease-out;
+    color: #fff;
+    margin-top: 90px;
+    padding-top: 130px;
+    padding-left: 40px;
+    animation-name: colorSlide;
+    animation-duration: 0.7s;
+}
+
+@keyframes colorSlide {
+    0% {
+        background-position: right bottom;
+    }
+
+    100% {
+        background-position:  left bottom;
+    }
+}
+
+.hero-topbar h1 {
+    display: flex;
+    font-size: 60px;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 1px;
+}
+
+
+
+/* =========================================
+   3. Services Menu-Bar
+    ========================================= */
+
+.menu-bar {
+    width: 100%;
+    height: 60px;
+}
+
+.menu-bar-content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.menu-bar-line {
+    font-size: 30px;
+    padding-top: 10px;
+    background-color: whitesmoke;
+    color: grey;
+}
+
+#overview, #bookdriver {
+    width: 50%;
+    height: 100%;
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 17px;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    color: rgb(76, 75, 75);
+}
+
+#overview:hover, #bookdriver:hover {
+    border-bottom: 4px solid rgba(41, 41, 209, 0.911);
+}
+
+#overview:visited, #bookdriver:visited {
+    color: rgb(76, 75, 75);
+    text-decoration: none;
+}
+
+
+
+
+/* =========================================
+   4. [Overview Section]
+    ========================================= */
+.data-bar {
+    width: 100%;
+    height: fit-content;
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+
+.data-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.data01, .data02, .data03 {
+    width: 33%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+}
+
+.data02 {
+    border-left: 5px double rgb(149, 149, 149);
+    border-right: 5px double rgb(149, 149, 149);
+}
+
+#drive_count, #distance_count, #hour_count {
+    font-size: 70px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/****** TEXT ******/
+.overview_text {
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Montserrat", sans-serif;
+}
+
+.text_content h1 {
+    text-align: left;
+    font-size: 50px;
+    letter-spacing: 1.5px;
+    color: rgb(23, 23, 137);
+    margin-bottom: 20px;
+}
+
+.text_content p {
+    text-align: left;
+    font-size: 20px;
+    word-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+
+/****** VIDEO ******/
+.overview_video {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 150px;
+}
+
+.overview_video iframe {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.overview-line {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/****** MODEL ******/
+.overview_model {
+    width: 100%;
+    height: 500px;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 120px;
+}
+
+.model_content {
+    width: 80%;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.model_content h1 {
+    text-align: left;
+    font-size: 50px;
+    letter-spacing: 1.5px;
+    color: rgb(23, 23, 137);
+    margin-bottom: 20px;
+}
+
+.model_content p {
+    text-align: left;
+    font-size: 20px;
+    word-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+
+
+
+
+@media (max-width: 818px) {
+    .data-bar {
+        margin-top: 50px;
+        margin-bottom: 70px;
+    }
+    .data-content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .data02 {
+        border-top: 5px double rgb(149, 149, 149);
+        border-bottom: 5px double rgb(149, 149, 149);
+        border-left: 0;
+        border-right: 0;
+    }
+    .data01, .data02, .data03 {
+        width: 70%;
+    }
+    .overview_video {
+        margin-bottom: 100px;
+    }
+    .overview_model {
+        margin-top: 90px;
+    }
+}
+
