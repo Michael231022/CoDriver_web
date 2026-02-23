@@ -21,28 +21,28 @@ function ServiceDashboard() {
         id: 1, 
         name: 'Ride Booking', 
         href: 'https://github.com/Michael231022/CoDriver/tree/main/Website',
-        icon: <RideBookingIcon className="dashboard-icon" />,
+        icon: '/image/service_icon/Rides.png',
         description: 'Book a ride with ease and convenience.' 
         },
         { 
         id: 2, 
-        name: 'Driver Tracking',
+        name: 'Airport Transfer',
         href: 'https://www.youtube.com/',
-        icon: <RideBookingIcon className="dashboard-icon" />,
+        icon: '/image/service_icon/Airport_Transfer.png',
         description: 'Track your driver in real-time.' 
         },
         { 
         id: 3, 
-        name: 'Payment Management',
+        name: 'Goods Delivery',
         href: '',
-        icon: <RideBookingIcon className="dashboard-icon" />,
+        icon: '/image/service_icon/Goods_Delivery.png',
         description: 'Manage your payment methods securely.' 
         },
         { 
         id: 4, 
-        name: 'Ride History', 
+        name: 'Pets Taxi', 
         href: '',
-        icon: <RideBookingIcon className="dashboard-icon" />,
+        icon: '/image/service_icon/Pets_Taxi.png',
         description: 'View your past rides and receipts.' 
         },
     ];
@@ -56,13 +56,21 @@ function ServiceDashboard() {
                 {services.map(({ id, name, icon, description, href }) => (
                     <a href={href} className='service-card' key={id}>
                         <div className="icon-wrapper">
-                            {icon}
+                            <img src={icon} alt={`${name} icon`} className="dashboard-icon" />
                         </div>
-                        <h2>{name}</h2>
-                        <p>{description}</p>
+                        <div className='word-wrapper'>
+                            <h2>{name}</h2>
+                            <p>{description}</p>
+                        </div>
                     </a>
                 ))}
+
+                <div className='services-all'>
+                    <a href=''>View All Services</a>
+                </div>
             </div>
+
+            
         </div>
     );
 }
