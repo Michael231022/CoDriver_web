@@ -1,8 +1,9 @@
 // src/App.jsx
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 
 // 引入刚才创建的两个页面
+import ScrollToTop from './components/ScrolltoTop'; 
 import Home from './pages/Home';
 import Services from './pages/Services';
 import BookDriver from './components/Service_BookDriver';
@@ -12,6 +13,8 @@ function App() {
   return (
     // 1. 包裹整个应用
     <BrowserRouter>
+      <ScrollToTop /> {/* 每次路由切换时滚动到顶部 */}
+
       <Routes>
         {/* 2. 定义路由规则 */}
         <Route path="/" element={<Home />} />           {/* 首页 */}
