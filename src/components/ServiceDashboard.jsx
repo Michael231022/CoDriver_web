@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const RideBookingIcon = ({ className }) => (
     <svg 
@@ -66,7 +67,7 @@ function ServiceDashboard() {
                 ))}
 
                 <div className='services-all'>
-                    <a href=''>View All Services</a>
+                    <Link to='/services'>View All Services</Link>
                 </div>
             </div>
 
