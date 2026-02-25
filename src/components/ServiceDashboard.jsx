@@ -1,5 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+        }
+    }
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            type: 'spring',
+            bounce: 0.4,
+            duration: 0.5,
+        }
+    }
+};
 
 const RideBookingIcon = ({ className }) => (
     <svg 
@@ -23,39 +47,46 @@ function ServiceDashboard() {
         name: 'Ride Booking', 
         href: 'https://github.com/Michael231022/CoDriver/tree/main/Website',
         icon: '/image/service_icon/Rides.png',
-        description: 'Book a ride with ease and convenience.' 
+        description: 'Reliable rides at your fingertips.' 
         },
         { 
         id: 2, 
         name: 'Airport Transfer',
         href: 'https://www.youtube.com/',
         icon: '/image/service_icon/Airport_Transfer.png',
-        description: 'Track your driver in real-time.' 
+        description: 'Seamless trips to and from the airport.' 
         },
         { 
         id: 3, 
         name: 'Goods Delivery',
         href: '',
         icon: '/image/service_icon/Goods_Delivery.png',
-        description: 'Manage your payment methods securely.' 
+        description: 'Secure, fast, and door-to-door.' 
         },
         { 
         id: 4, 
         name: 'Pets Taxi', 
         href: '',
         icon: '/image/service_icon/Pets_Taxi.png',
-        description: 'View your past rides and receipts.' 
+        description: 'Safe journeys for your furry friends.' 
         },
     ];
 
 
     return (
         <div className="service-dashboard">
-            <h1>CoDriver Services</h1>
+            <motion.h1
+                initial = {{ opacity: 0, y: -20 }}
+                whileInView = {{ opacity: 1, y: 0 }}
+                transition = {{ duration: 0.6 }}
+                viewport = {{once: true}}
+            >
+                CoDriver Services
+            </motion.h1>
 
-            <div className="services-grid">
+            <motion.div className="services-grid" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{once: true, amount: 0.2}}>
                 {services.map(({ id, name, icon, description, href }) => (
-                    <a href={href} className='service-card' key={id}>
+                    <motion.a href={href} className='service-card' key={id} variants={cardVariants}>
                         <div className="icon-wrapper">
                             <img src={icon} alt={`${name} icon`} className="dashboard-icon" />
                         </div>
@@ -63,13 +94,13 @@ function ServiceDashboard() {
                             <h2>{name}</h2>
                             <p>{description}</p>
                         </div>
-                    </a>
+                    </motion.a>
                 ))}
 
                 <div className='services-all'>
                     <Link to='/services'>View All Services</Link>
                 </div>
-            </div>
+            </motion.div>
 
             
         </div>

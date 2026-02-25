@@ -12,7 +12,7 @@
   --white: #ffffff;
   
   /* 📏 尺寸 */
-  --header-height: 90px;
+  --header-height: 70px;
   
   /* 🔤 字体 */
   --font-main: "Montserrat", sans-serif;
@@ -62,7 +62,7 @@ ul {
     background-position:  left bottom; /*rgba(41, 41, 209, 0.911)*/
     transition: all .3s ease-out;
     color: #fff;
-    margin-top: 90px;
+    margin-top: 70px;
     padding-top: 130px;
     padding-left: 40px;
     animation-name: colorSlide;

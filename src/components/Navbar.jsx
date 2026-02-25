@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <header className="header-bar">
         {/* 1. Logo 部分 */}
-        <Link id="header-logo-a" to="/">
+        <Link id="header-logo-a" to="/" reloadDocument>
             <nav className="header-logo-nav">
                 {/* 注意：图片路径前面加了 /，代表从 public 文件夹读取 */}
                 <img className="header-logo" draggable="false" src="/image/logo/codriver-logo-dark.png" alt="CoDriver Logo" />
@@ -33,7 +33,7 @@ function Navbar() {
         {/* 4. 中间导航链接 */}
         <nav className="nav-bar">
             <ul className="nav_links">
-                <Link to="/services"><li>Services</li></Link>
+                <Link to="/services" reloadDocument><li>Services</li></Link>
                 <Link to="/drivers"><li>Drivers</li></Link>
                 <Link to="/news"><li>Newsroom</li></Link>
                 <Link to="/about"><li>About Us</li></Link>
@@ -52,9 +52,6 @@ function Navbar() {
 
         {/* 5. 右侧按钮 */}
         <nav className="nav-bar">
-            <div className="rightcontent-call-div">
-                <Link id="calldriver" to="/book"><button>'Co' For A Driver</button></Link>
-            </div>
             <div className="rightcontent-login-div">
                 <Link id="signup_acc" to="/signup"><button>Sign Up</button></Link>
                 <Link id="login_acc" to="/login"><button>Log in</button></Link>

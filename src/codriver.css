@@ -12,7 +12,7 @@
   --white: #ffffff;
   
   /* 📏 尺寸 */
-  --header-height: 90px;
+  --header-height: 70px;
   
   /* 🔤 字体 */
   --font-main: "Montserrat", sans-serif;
@@ -75,18 +75,17 @@ ul {
 }
 
 #header-logo-a {
-  width: 200px;
-  height: 45px;
+  width: 180px;
+  height: 40px;
 }
 
 .header-bar li, .header-bar a {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   color: black;
   transition: all 0.3s ease;
 }
 
-/* 修正了原本的拼写错误 heaer-bar */
 .header-bar li:hover{
   color: var(--primary-blue);
   background-color: rgba(221, 220, 220, 0.26);
@@ -100,50 +99,30 @@ ul {
 }
 
 /* 导航栏按钮组 */
-.rightcontent-call-div {
-  display: inline;
-}
-
 .rightcontent-login-div {
-  display: inline;
-  width: 150px;
-  margin-left: 50px;
-  margin-right: 120px;
+  position: relative;
+  display: inline-block;
+  width: 160px; 
+  height: 35px; 
+  margin-left: 20px;   
+  flex-shrink: 0; 
+  top: 2px;
 }
+ 
 
-button {
+.rightcontent-login-div button {
+  font-size: 14px;
+  height: 35px;
+  border-radius: 100px;
   border: 0;
   cursor: pointer;
   font-family: var(--font-main);
 }
 
-#calldriver button {
-  width: 160px;
-  height: 40px;
-  color: white;
-  font-size: 15px;
-  word-spacing: 2px;
-  border-radius: 100px;
-  background-color: var(--primary-blue);
-  transition: all 0.5s;
-}
-
-#calldriver button:hover {
-  color: var(--primary-blue);
-  background-color: white;
-  border: 1px solid var(--primary-blue);
-}
-
-.rightcontent-login-div button {
-  font-size: 16px;
-  height: 40px;
-  border-radius: 100px;
-}
-
 #signup_acc button {
   position: absolute;
   color: white;
-  width: 100px;
+  width: 90px;
   z-index: 1;
   background-color: #4e4bf8;
 }
@@ -155,8 +134,8 @@ button {
 #login_acc button {
   position: absolute;
   padding-left: 30px;
-  margin-left: 55px;
-  width: 120px;
+  margin-left: 47px;
+  width: 110px;
   background-color: #c9c8fc;
 }
 
@@ -196,6 +175,7 @@ button {
   width: 30px;
   height: 28px;
   margin-top: 3px;
+  display: none; /* 默认隐藏，移动端显示 */
 }
 
 .login-btn-dropdown {
@@ -340,9 +320,9 @@ button {
    ========================================= */
 .header-container {
   position: relative;
-  top: 90px;
+  top: 70px;
   width: 100%;
-  height: 660px;
+  height: 600px;
   overflow: hidden;
 }
 
@@ -355,7 +335,7 @@ button {
 
 .header-img-container img {
   width: 100%;
-  min-height: 660px;
+  min-height: 600px;
   object-fit: fill;
 }
 
@@ -370,7 +350,7 @@ button {
    ========================================= */
 .app-download-bar-div {
   position: relative;
-  margin-top: 90px;
+  margin-top: 70px;
   width: 100%;
   height: 75px;
   display: flex;
@@ -596,6 +576,8 @@ button {
   height: 40px;
   padding: 8px 16px;
   margin: 14px;
+  border: none;
+  cursor: pointer;
   border-radius: 4px;
   background-color: var(--primary-blue);
 }
@@ -629,33 +611,60 @@ button {
 }
 
 .icon-wrapper {
-  width: 200px;
-  height: 100%;
+  flex: 0 0 150px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 20px;
+}
+
+.icon-wrapper .dashboard-icon {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
 }
 
 .word-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  line-height: 1.4;
 }
 
 .service-card {
+  position: relative;
   display: flex;
   width: 100%;
-  height: 180px;
+  min-height: 160px;
   margin: 0px auto;
   padding: 15px;
   background-color:#ffffff;
   color: var(--text-dark);
-  border-bottom: 1px solid var(--primary-blue);
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .service-card:hover {
   color: var(--primary-blue);
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-blue);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+}
+
+.service-card:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .services-all {
@@ -665,13 +674,36 @@ button {
   width: 100%;
   height: 100px;
   background-color:#ffffff;
+}
+
+.services-all a {
+  position: relative;
+  text-decoration: none;
   color: var(--text-dark);
   font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.services-all a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-blue);
+  transition: all 0.3s ease-out;
+  transform: translateX(-50%);
 }
 
 .services-all a:hover {
   color: var(--primary-blue);
 }
+
+.services-all a:hover::after {
+  width: 100%;
+}
+
 
 
 .dashboard-icon {

@@ -27,11 +27,11 @@ function Footer() {
                 <div className="footer-top-div">
                     <p>Services</p>
                     <ul className="footer-top-list">
-                        <li><a href="#">Book A Driver</a></li>
-                        <li><a href="#">CoDriver Account</a></li>
-                        <li><a href="#">SwiftMIC Wallet</a></li>
-                        <li><a href="#">Website editors</a></li>
-                        <li><a href="#">Online retail</a></li>
+                        <li><a href="#">Ride Booking</a></li>
+                        <li><a href="#">Airport Transfer</a></li>
+                        <li><a href="#">Goods Delivery</a></li>
+                        <li><a href="#">Pets Taxi</a></li>
+                        <li><a href="#">More Services</a></li>
                     </ul>
                 </div>
 
