@@ -1,0 +1,35 @@
+{
+
+    "header.services": "Services",
+    "header.drivers": "Drivers",
+    "header.newsroom": "Newsroom",
+    "header.about": "About Us",
+    "header.more": "More",
+
+    "button.signup": "Sign Up",
+    "button.login": "Login",
+
+    "footer.slogan": "Ride Together, Arrive Safely",
+    "footer.english": "English (United Kingdom)",
+    "footer.chinese": "Chinese (China)",
+    "footer.privacy": "Privacy Policy",
+    "footer.terms": "Terms of Service",
+    "footer.code": "Code of Conduct",
+
+    "footer.services.title": "Services",
+    "footer.services.ride": "Ride Booking",
+    "footer.services.airport": "Airport Transfer",
+    "footer.services.delivery": "Goods Delivery",
+    "footer.services.pets": "Pet Taxi",
+    "footer.services.more": "More Services",    
+
+    "footer.drivers.title": "Drivers",
+    "footer.drivers.become": "Become a Driver",
+    "footer.drivers.support": "Driver Support",
+    "footer.drivers.resources": "Driver Resources",
+    "footer.drivers.community": "Driver Community",
+    "footer.drivers.more": "More for Drivers"
+    
+
+
+}

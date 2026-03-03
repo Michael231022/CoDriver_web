@@ -1,8 +1,17 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
 
 function Footer() {
   // 获取当前年份的简便写法
   const currentYear = new Date().getFullYear();
+
+  // Translation hook
+  const { t } = useTranslation("header_footer");
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem("lang", lang);
+  };
 
   return (
     <footer className="main-codriver-footer">
@@ -16,34 +25,34 @@ function Footer() {
                             <img draggable="false" src="/image/logo/codriver-logo-dark.png" alt="Logo" />
                         </div>
                     </a>
-                    <p>Ride Together, Arrive Safely</p>
-                    <select name="language_selection" id="codriver-multi-language" defaultValue="english">
-                        <option value="english">English (United Kingdom)</option>
-                        <option value="chinese">Chinese (China)</option>                        
+                    <p>{t("footer.slogan")}</p>
+                    <select name="language_selection" id="codriver-multi-language" value={i18n.language} onChange={(e) => changeLanguage(e.target.value)}>
+                        <option value="en">{t("footer.english")}</option>
+                        <option value="ch">{t("footer.chinese")}</option>                        
                     </select>
                 </div>
 
                 {/* 链接列表 1 */}
                 <div className="footer-top-div">
-                    <p>Services</p>
+                    <p>{t("footer.services.title")}</p>
                     <ul className="footer-top-list">
-                        <li><a href="#">Ride Booking</a></li>
-                        <li><a href="#">Airport Transfer</a></li>
-                        <li><a href="#">Goods Delivery</a></li>
-                        <li><a href="#">Pets Taxi</a></li>
-                        <li><a href="#">More Services</a></li>
+                        <li><a href="#">{t("footer.services.ride")}</a></li>
+                        <li><a href="#">{t("footer.services.airport")}</a></li>
+                        <li><a href="#">{t("footer.services.delivery")}</a></li>
+                        <li><a href="#">{t("footer.services.pets")}</a></li>
+                        <li><a href="#">{t("footer.services.more")}</a></li>
                     </ul>
                 </div>
 
                 {/* 链接列表 2 (Drivers) */}
                 <div className="footer-top-div">
-                    <p>Drivers</p>
+                    <p>{t("footer.drivers.title")}</p>
                     <ul className="footer-top-list">
-                        <li><a href="#">Be A Driver</a></li>
-                        <li><a href="#">Conditions</a></li>
-                        <li><a href="#">Awards</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Online retail</a></li>
+                        <li><a href="#">{t("footer.drivers.become")}</a></li>
+                        <li><a href="#">{t("footer.drivers.support")}</a></li>
+                        <li><a href="#">{t("footer.drivers.resources")}</a></li>
+                        <li><a href="#">{t("footer.drivers.community")}</a></li>
+                        <li><a href="#">{t("footer.drivers.more")}</a></li>
                     </ul>
                 </div>
 
@@ -88,9 +97,9 @@ function Footer() {
                     <div className="content-below-line">
                         <div className="footer-bottom-div">
                             <ul className="terms-div">
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Code of Conduct</a></li>
+                                <li><a href="#">{t("footer.privacy")}</a></li>
+                                <li><a href="#">{t("footer.terms")}</a></li>
+                                <li><a href="#">{t("footer.code")}</a></li>
                             </ul>
                         </div>
                         <div className="footer-bottom-div">

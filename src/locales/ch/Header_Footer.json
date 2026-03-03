@@ -1,0 +1,32 @@
+{
+
+    "header.services": "服务",
+    "header.drivers": "司机",
+    "header.newsroom": "咨询中心",
+    "header.about": "关于我们",
+    "header.more": "更多",
+
+    "button.signup": "注册",
+    "button.login": "登录",
+
+    "footer.slogan": "结伴而行，安全抵达",
+    "footer.english": "英文 (英国)",
+    "footer.chinese": "中文 (中华人民共和国)",
+    "footer.privacy": "隐私政策",
+    "footer.terms": "服务条款",
+    "footer.code": "行为守则",
+
+    "footer.services.title": "服务",
+    "footer.services.ride": "预约乘车",
+    "footer.services.airport": "机场接送",
+    "footer.services.delivery": "货物配送",
+    "footer.services.pets": "宠物专车",
+    "footer.services.more": "更多服务",    
+
+    "footer.drivers.title": "司机",
+    "footer.drivers.become": "成为司机",
+    "footer.drivers.support": "司机支持",
+    "footer.drivers.resources": "司机资源",
+    "footer.drivers.community": "司机社区",
+    "footer.drivers.more": "更多司机服务"
+}

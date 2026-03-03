@@ -1,7 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function Navbar() {
+  const { t } = useTranslation("header_footer");
+
   return (
     <header className="header-bar">
         {/* 1. Logo 部分 */}
@@ -33,12 +36,12 @@ function Navbar() {
         {/* 4. 中间导航链接 */}
         <nav className="nav-bar">
             <ul className="nav_links">
-                <Link to="/services" reloadDocument><li>Services</li></Link>
-                <Link to="/drivers"><li>Drivers</li></Link>
-                <Link to="/news"><li>Newsroom</li></Link>
-                <Link to="/about"><li>About Us</li></Link>
+                <Link to="/services" reloadDocument><li>{t("header.services")}</li></Link>
+                <Link to="/drivers"><li>{t("header.drivers")}</li></Link>
+                <Link to="/news"><li>{t("header.newsroom")}</li></Link>
+                <Link to="/about"><li>{t("header.about")}</li></Link>
                 <div className="nav_links-more-dropdown-div">
-                    <a><li className="nav_links-li">More <span className="arrow-down-span"><i className="nav-bar-arrow-down"></i></span></li></a>
+                    <a><li className="nav_links-li">{t("header.more")} <span className="arrow-down-span"><i className="nav-bar-arrow-down"></i></span></li></a>
                     <div className="nav_links-more-dropdown">
                         <a className="nav-links-moredown-first" href="/safety">Safety</a>
                         <a href="/how-it-works">How CoDriver Works</a>
@@ -53,8 +56,8 @@ function Navbar() {
         {/* 5. 右侧按钮 */}
         <nav className="nav-bar">
             <div className="rightcontent-login-div">
-                <Link id="signup_acc" to="/signup"><button>Sign Up</button></Link>
-                <Link id="login_acc" to="/login"><button>Log in</button></Link>
+                <Link id="signup_acc" to="/signup"><button>{t("button.signup")}</button></Link>
+                <Link id="login_acc" to="/login"><button>{t("button.login")}</button></Link>
             </div>
         </nav>
     </header>
