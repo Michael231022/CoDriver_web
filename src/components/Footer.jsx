@@ -117,7 +117,7 @@ function Footer() {
                 <div className="footer-last-bottom">
                     <div className="footer-last-div">
                         {/* 重点看这里：原本的 <script> 变成了 {currentYear} */}
-                        <p>© {currentYear} <a id="MIC_TECHNOLOGIES" href="https://michael231022.github.io/MIC-TECH/Website/mic_tech.html" target="_blank" rel="noreferrer">MIC TECHNOLOGIES</a></p>
+                        <p>© {currentYear} <a id="MIC_TECHNOLOGIES" href="https://michael231022.github.io/MIC-TECH/Website/mic_tech.html" target="_blank" rel="noreferrer">MIC TECHNOLOGIES. All rights reserved.</a></p>
                     </div>
                 </div>
             </div> {/* footer bottom content */}
